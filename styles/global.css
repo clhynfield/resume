@@ -1,0 +1,264 @@
+/* 1. RESET: Margin, padding, and border resets except for form elements */
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/*2. CONSISTENCY: adopted from http://necolas.github.com/normalize.css/ */
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  min-height: 100%;
+  font-size: 100%;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+audio,
+canvas,
+video {
+  display: block;
+}
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+b, strong {
+  font-weight: bold;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+input,
+textarea,
+button,
+select {
+  margin: 0;
+  font-size: 100%;
+  line-height: normal;
+  vertical-align: baseline;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type="checkbox"], input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+textarea {
+  overflow: auto;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* 3. Simple fluid media */
+figure {
+  position: relative;
+}
+figure img,
+figure object,
+figure embed,
+figure video {
+  max-width: 100%;
+  display: block;
+}
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+/* 4. MODULAR SCALE BASELINE GRID: type size presets */
+body {
+  /* 16px / 24px */
+
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.small {
+  /* 13px / 18px */
+
+  font-size: 0.8125em;
+  line-height: 1.3846153846153846em;
+}
+.normal, h3 {
+  /* 16px / 24px */
+
+  font-size: 1.25em;
+  line-height: 1.5em;
+  /* 24 */
+
+}
+.large, h2 {
+  /* 26 / 36px */
+
+  font-size: 1.625em;
+  line-height: 1.3846153846153846em;
+}
+.huge, h1 {
+  /* 42px / 48px */
+
+  font-size: 2.625em;
+  line-height: 1.1428571428571428em;
+}
+.massive {
+  /* 68px / 72px */
+
+  font-size: 4.25em;
+  line-height: 1.0588235294117647em;
+}
+.gigantic {
+  /* 110px / 120px */
+
+  font-size: 6.875em;
+  line-height: 1.0909090909090908em;
+}
+
+/* 5. GLOBAL TYPOGRAPHY */
+body {
+	color: #181813;
+	font-family: "azuro-web", Arial, sans-serif;
+}
+
+h1 {
+	 text-shadow:0 1px 0 rgba(255,255,255,0.75);
+	 color: #873a93;
+	 font-weight: normal;
+}
+
+h2 {
+	 text-shadow:0 1px 0 rgba(255,255,255,0.75);
+	 color: #8c6093;
+}
+
+h3, h4 {
+	text-shadow:0 1px 0 rgba(255,255,255,0.75);
+	 color: #B3AAB7;
+}
+
+h5 {
+	text-shadow:0 1px 0 rgba(255,255,255,0.75);
+	color: #873a93;
+}
+
+#quote {
+	font-style: italic;
+	color: #8c6093;
+}
+
+.job p {
+	font-size: 0.875em;
+}
+
+ul {
+	margin-left: 0;
+	padding-left: 1em;
+}
+
+li {
+	font-size: 0.785em;
+}
+
+.title {
+	font-weight: bold;
+	color: #474747;
+}
+
+.date_range {
+	color: #474747;
+}
+
+#build dl
+{
+	margin: 0;
+	padding: 0;
+	font-size: 0.785em;
+}
+
+#build  dt
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+#build dd
+{
+	margin: 0 0 1em 0;
+	padding: 0;
+}
+
+/* 6. Elastic gutters: box-sizing will not work in IE6-7 
+.wrapper {
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+I applied box-sizing in the grid.less file as another edit to Semantic GS */
+
+/* 7. BROWSER AND NON-SEMANTIC STYLING */
+.cf:before, .cf:after { content: ""; display: block; }
+.cf:after { clear: both; }
+.ie6 .cf { zoom: 1 }
