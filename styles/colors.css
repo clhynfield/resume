@@ -1,0 +1,32 @@
+
+body {
+  color: #656b6f;
+  background-color: #fcf9e4;
+}
+
+h1 {
+   color: #253043;}
+
+h2 {
+   color: #253043;
+}
+
+h3, h4 {
+   color: #737778;
+}
+
+h5 {
+  color: #5578af;
+}
+
+#quote {
+  color: #8c6093;
+}
+
+.title {
+  color: #656b6f;
+}
+
+.date_range {
+  color: #9e9e95;
+}
