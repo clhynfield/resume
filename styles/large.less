@@ -1,0 +1,155 @@
+@import 'grid.less';
+
+// LARGE GRID //
+
+// First we set column and gutter widths using numbers from Fibonacci. 
+// Then we create 12 columns and the result is a golden means grid that makes Fibonacci proud;)
+
+@column-width: 88;
+@gutter-width: 21;
+@columns: 12;
+
+// Give thee divine proportions instead of pixels!
+@total-width: 100%;
+
+// LAYOUT //
+
+.container {
+	width: 80%;
+	margin: auto;
+	margin-top: 1em;
+}
+
+#intro {
+	.column(12);
+	margin-bottom: 1em;
+	
+	header {
+		.row(12);
+		
+		#headshot {
+			.column(1,12);
+			.push(2);
+		}
+		#bio {
+			.column(5,12);
+		}
+		#quote {
+			.column(4,12);
+		}
+	}
+}
+	
+#main {
+	.column(8);
+	
+	.subhead {
+		.row(8);
+		
+		.hgsection {
+			.column(5,8);
+			.push(3);
+		}	
+	}
+}
+
+#main {
+	.column(8);
+	
+	.job {
+		.row(8);
+		margin-bottom: 0.825em;
+
+		.company {
+			.column(2,8);
+			text-align: right;
+		}
+		.summary {
+			.column(6,8);
+		}		
+	}
+}
+
+#secondary {
+	.column(4);
+}
+
+#build {
+	margin-bottom: 1em;
+}
+
+// Design //
+
+#secondary {
+	border-left: dotted 0.125em #B8B8B8;
+	padding-left: 1em;
+}
+
+nav select {
+	display: none;
+}
+
+h1 {
+	font-size: 2.625em;
+}
+
+h2 {
+	font-size: 1.625em;
+}
+
+h3 {
+	font-size: 1.25em;
+}
+
+#quote p {
+	font-size: 1.25em;
+}
+
+
+/* @media screen and (min-width: 984px) */
+@media screen and (min-width: 61.5em) {
+  body {
+    /* Reset baseline grid to 16/16 = 1.0 */
+  
+    font-size: 1em;
+  }
+}
+/* @media screen and (min-width: 1200px) */
+@media screen and (min-width: 75em) {
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+  
+    font-size: 1.0625em;
+  }
+}
+/* @media screen and (min-width: 1392px) */
+@media screen and (min-width: 87em) {
+  body {
+    /* Reset baseline grid to 16/16 = 1.0 */
+  
+    font-size: 1em;
+  }
+ }
+/* @media screen and (min-width: 1680px) */
+@media screen and (min-width: 105em) {
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+  
+    font-size: 1.0625em;
+  }
+}
+
+/* @media screen and (min-width: 1872px) */
+@media screen and (min-width: 117em) {
+  
+}
+
+/* @media screen and (min-width: 2080px) */
+@media screen and (min-width: 130em) {
+  body {
+    /* Zoom baseline grid to 18/16 = 1.125 */
+  
+    font-size: 1.125em;
+    max-width: 160em;
+  }
+}
