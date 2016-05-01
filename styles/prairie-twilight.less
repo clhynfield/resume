@@ -3,7 +3,15 @@
   font-style: normal;
   font-weight: 400;
   font-variant: small-caps;
-  src: local('EB Garamond SC'), local('EBGaramond'), url(../fonts/EBGaramondSC12-Regular.woff) format('woff');
+  src: local('EB Garamond SC'), local('EBGaramond'), url(../fonts/EBGaramondSC12-SC.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-variant: all-small-caps;
+  src: local('EB Garamond SC'), local('EBGaramond'), url(../fonts/EBGaramondSC12-AllSC.woff) format('woff');
 }
 
 @font-face {
@@ -29,11 +37,13 @@ body {
 
 h1 {
   color: #253043;
-  font-weight: bold;
+  font-family: 'EB Garamond', serif;
+  font-variant: all-small-caps;
+  letter-spacing: 0.12em;
 }
 
 h2 {
-   color: #253043;
+   color: #5578af;
 }
 
 h3, h4 {
