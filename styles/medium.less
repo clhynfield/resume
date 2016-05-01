@@ -1,12 +1,14 @@
 @import 'grid.less';
 
+@debug: 1;
+
 // MEDIUM GRID //
 
 // For our medium grid we use only 6 columns total and active
 // to maximize screen real estate and to give us exactly half of our large sized grid
 // Leverage the golden means and the rule of thirds here as well with column widths divisible by 3;)
-@column-width: 144;
-@gutter-width: 16;
+@column-width: 4em;
+@gutter-width: 3em;
 @columns: 6;
 
 // Give us divine proportions instead of pixels
@@ -21,6 +23,7 @@
 }
 
 #intro {
+    .column();
 	margin-bottom: 1em;
 	
 	header {
@@ -28,6 +31,14 @@
 		#bio {
 			.column(4, 6);
 			.push(2);
+			h1, h2, address {
+		      .debug_border;
+		      vertical-align: middle;
+		    }
+		    address {
+		      line-height: 2.25em;
+		      
+    		}
 		}
 		#quote {
 			.column(4);
@@ -56,16 +67,13 @@
     .summary {
       .clearfix;
       .title, .date_range, .accomplishments {
-        border: 0px dotted black;
         .column(4);
         .push(2);
       }
       .accomplishments {
-        border: px dotted black;
         .column(4);
       }
       .value {
-        border: 0px dotted black;
         .column(2);
         text-align: right;
       }		
@@ -75,6 +83,13 @@
 
 
 // DESIGN //
+
+.huge, h1 {
+  /* 32 / 36px */
+
+  font-size: 2em;
+  line-height: 1.125em;
+}
 
 @media screen and (min-width: 40em) {
   body {
@@ -93,3 +108,35 @@
     font-size: 1.0625em;
   }
 }
+
+// DEBUG //
+
+.debug_border {
+  background-color: hsla(271, .15, 95%, 50%*@debug);
+  border: @debug*.5px dotted black;
+}
+
+.debug_block {
+  display: block;
+}
+
+#main {
+  .job {
+    .summary {
+      .value, .title, .date_range, .accomplishments {
+        .debug_border;
+      }
+      .value::after {
+        content: 5px*@debug;
+      }
+    }
+  }
+  .debug {
+    .row;
+    .debug_col {
+      .column(1);
+      .debug_border;
+    }
+  }
+}
+
