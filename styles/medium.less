@@ -20,6 +20,60 @@
   margin-top: 1em;
 }
 
+#intro {
+	margin-bottom: 1em;
+	
+	header {
+		.row;
+		#bio {
+			.column(4, 6);
+			.push(2);
+		}
+		#quote {
+			.column(4);
+			.push(2);
+		}
+	}
+}
+
+#main {
+	.subhead {
+		.title {
+			.column(4);
+			.push(2);
+		}	
+	}
+}
+
+#main {
+  .job {
+    .row;
+    margin-bottom: 0.825em;
+    .company {
+      .column(4);
+      .push(2);
+    }
+    .summary {
+      .clearfix;
+      .title, .date_range, .accomplishments {
+        border: 0px dotted black;
+        .column(4);
+        .push(2);
+      }
+      .accomplishments {
+        border: px dotted black;
+        .column(4);
+      }
+      .value {
+        border: 0px dotted black;
+        .column(2);
+        text-align: right;
+      }		
+    }		
+  }
+}
+
+
 // DESIGN //
 
 @media screen and (min-width: 40em) {
