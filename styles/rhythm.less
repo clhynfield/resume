@@ -1,0 +1,10 @@
+// Visual Rhythm // for LESS: http://lesscss.org/
+
+// line_height(x) 
+//  = em*em*(((ceil(2*(((x*1.125)/1em)-1)))/2)+1)/x
+
+.lead(@font_size, @line_height:@font_size) {
+  font-size: @font_size;
+  line-height: (((ceil(2*(((@line_height*1.125)/1em)-1)))/2)+1)/@font_size;
+}
+
