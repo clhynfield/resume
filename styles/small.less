@@ -1,4 +1,5 @@
 @import 'grid.less';
+@import 'rhythm.less';
 
 // GRID //
 
@@ -42,17 +43,21 @@
 // DESIGN //
 
 h1 {
-  font-size: 1.625em;
+  .lead(1.5em);
 }
 
 h2 {
-  font-size: 1.25em;
+  .lead(1.5em);
 }
 
 h3 {
-  font-size: 1em;
+  .lead(1em, 1.5em);
+}
+
+#bio address {
+  .lead(1em, 1.5em);
 }
 
 #quote p {
-  font-size: 0.875em;
+  .lead(0.875em);
 }
