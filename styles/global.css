@@ -182,23 +182,19 @@ body {
 }
 
 h1 {
-   text-shadow:0 1px 0 rgba(255,255,255,0.75);
    color: #873a93;
    font-weight: normal;
 }
 
 h2 {
-   text-shadow:0 1px 0 rgba(255,255,255,0.75);
    color: #8c6093;
 }
 
 h3, h4 {
-  text-shadow:0 1px 0 rgba(255,255,255,0.75);
    color: #B3AAB7;
 }
 
 h5 {
-  text-shadow:0 1px 0 rgba(255,255,255,0.75);
   color: #873a93;
 }
 
