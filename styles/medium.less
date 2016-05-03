@@ -107,37 +107,3 @@
     .lead(1.25em);
   }
 }
-
-// DEBUG //
-
-.debug_border {
-  background-color: hsla(271, .15, 95%, 50%*@debug);
-  border: @debug*.5px dotted black;
-}
-
-.debug_block {
-  display: block;
-}
-
-#main {
-  .subhead .title {
-    .debug_border;
-  }
-  .job {
-    .company {
-      .debug_border;
-    }
-    .summary {
-      .value, .title, .date_range, .accomplishments {
-        .debug_border;
-      }
-    }
-  }
-  .debug_row {
-    .row;
-    .debug_col {
-      .column(1);
-      .debug_border;
-    }
-  }
-}
