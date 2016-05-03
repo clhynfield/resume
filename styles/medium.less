@@ -1,24 +1,23 @@
 @import 'grid.less';
 @import 'rhythm.less';
 
-@debug: 1;
+@debug: 0;
 
 // MEDIUM GRID //
 
-// For our medium grid we use only 6 columns total and active
-// to maximize screen real estate and to give us exactly half of our large sized grid
-// Leverage the golden means and the rule of thirds here as well with column widths divisible by 3;)
-@column-width: 4em;
-@gutter-width: 3em;
-@columns: 6;
+// Target a total composition width of 36em, 
+// with column and gutter in golden section.
 
-// Give us divine proportions instead of pixels
+@columns: 6;
+@column-width: 3.7082em;
+@gutter-width: 2.2918em;
+
 @total-width: 100%;
 
 // LAYOUT //
 
 .container {
-  width: 92%;
+  width: 90%;
   margin: auto;
   margin-top: 1em;
 }
