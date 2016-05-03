@@ -1,4 +1,5 @@
 @import 'grid.less';
+@import 'rhythm.less';
 
 @debug: 1;
 
@@ -85,25 +86,24 @@
 // DESIGN //
 
 .huge, h1 {
-  font-size: 1.625em;
-  line-height: 1.3846153846153846em;
+  .lead(1.625em);
 }
 
 @media screen and (min-width: 40em) {
   body {
-    font-size: 1em;
+    .lead(1em);
   }
 }
 
 @media screen and (min-width: 45em) {
   body {
-    font-size: 1em;
+    .lead(1.125em);
   }
 }
 
 @media screen and (min-width: 55.5em) {
   body {
-    font-size: 1.0625em;
+    .lead(1.25em);
   }
 }
 
