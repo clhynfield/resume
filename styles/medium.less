@@ -1,7 +1,7 @@
 @import 'grid.less';
 @import 'rhythm.less';
 
-@debug: 0;
+@debug: 1;
 
 // MEDIUM GRID //
 
@@ -23,7 +23,7 @@
 }
 
 #intro {
-    .column(6);
+    .row;
 	margin-bottom: 1em;
 	
 	header {
@@ -48,7 +48,9 @@
 }
 
 #main {
+  .row;
 	.subhead {
+	  .row;
 		.title {
 			.column(4);
 			.push(2);
@@ -118,17 +120,20 @@
 }
 
 #main {
+  .subhead .title {
+    .debug_border;
+  }
   .job {
+    .company {
+      .debug_border;
+    }
     .summary {
       .value, .title, .date_range, .accomplishments {
         .debug_border;
       }
-      .value::after {
-        content: 5px*@debug;
-      }
     }
   }
-  .debug {
+  .debug_row {
     .row;
     .debug_col {
       .column(1);
@@ -136,4 +141,3 @@
     }
   }
 }
-
