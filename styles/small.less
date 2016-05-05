@@ -25,13 +25,12 @@
 }
 
 #intro {
-  .column(3);
+  .column(@columns);
   margin-bottom: 0.75em;
 }
 
-
 .job {
-  .column(3);
+  .column(@columns);
   margin-bottom: 0.675em;
 }
 
@@ -64,4 +63,45 @@ h4 {
 
 #quote p {
   .lead(0.875em);
+}
+
+#intro {
+    .row;
+	header {
+		.row;
+		#bio {
+			.column(@columns);
+		}
+		#quote {
+			.column(@columns);
+		}
+	}
+}
+
+#main {
+  .row;
+	.subhead {
+	  .row;
+		.title {
+			.column(@columns);
+		}	
+	}
+  .job {
+    .row;
+    .company {
+      .column(@columns);
+    }
+    .summary {
+      .clearfix;
+      .title, .date_range, .accomplishments {
+        .column(@columns);
+      }
+      .accomplishments {
+        .column(@columns);
+      }
+      .value {
+        .column(@columns);
+      }		
+    }		
+  }
 }
