@@ -59,12 +59,9 @@ main {
     }
     .job {
       .clearfix;
-      .title, .date_range, .accomplishments {
+      h5, .date_range, .accomplishments {
         .column(4);
         .push(2);
-      }
-      .separator {
-        display: none;
       }
       .accomplishments {
         .column(4);
@@ -90,6 +87,12 @@ main {
 
 #bio address {
   .lead(1em, 1.625em);
+}
+
+.job .date_range {
+  &:before {
+    content: "";
+  }
 }
 
 main ul, ol {
