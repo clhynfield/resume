@@ -16,7 +16,7 @@
 
 // LAYOUT //
 
-.container {
+body {
   width: 90%;
   margin: auto;
   padding-top: 0.375em;
@@ -27,34 +27,25 @@
 }
 
 
-#intro {
+header {
   .row;
-  header {
-    .row;
-    #bio {
-      .column(@columns);
-    }
-    #quote {
-      .column(@columns);
-    }
+  h1, h2, address, #quote {
+    .column(@columns);
   }
 }
 
-#main {
+main {
   .row;
-  .subhead {
+  .company {
     .row;
-    .title {
+    h4 {
       .column(@columns);
     }
-  }
-  .job {
-    .row;
-    .company {
+    .job {
       .column(@columns);
-    }
-    .summary {
-      .clearfix;
+      h5, .date_range {
+        display: inline;
+      }
       .accomplishments {
         .column(@columns);
       }
@@ -92,4 +83,10 @@ h4, h5 {
 
 #quote p {
   .lead(0.875em);
+}
+
+.job .date_range {
+  &:before {
+    content: " — ";
+  }
 }

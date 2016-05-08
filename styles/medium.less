@@ -14,59 +14,41 @@
 
 // LAYOUT //
 
-.container {
+body {
   width: 90%;
   margin: auto;
   margin-top: 1em;
 }
 
-#intro {
-  margin-bottom: 1em;
-
-  header {
-    #bio {
-      .column(4, 6);
-      .push(2);
-      h1, h2, address {
-          .debug_border;
-          vertical-align: middle;
-        }
-        address {
-          line-height: 2.25em;
-
-        }
-    }
-    #quote {
-      .column(4);
-      .push(2);
-    }
+header {
+  .row;
+  h1, h2, address, #quote {
+    .column(4, 6);
+    .push(2);
+    .debug_border;
+    vertical-align: middle;
   }
 }
 
-#main {
-  .subhead {
-    .title {
-      .column(4);
-      .push(2);
-    }
+main {
+  h3 {
+    .column(4);
+    .push(2);
   }
 }
 
-#main {
-  .job {
+main {
+  .company {
     margin-bottom: 0.825em;
-    .company {
+    h4 {
       .column(4);
       .push(2);
     }
-    .summary {
+    .job {
       .clearfix;
-      .title, .date_range, .accomplishments {
+      h5, .date_range, .accomplishments {
         .column(4);
         .push(2);
-      }
-      .separator {
-        display: none;
       }
       .accomplishments {
         .column(4);
@@ -90,15 +72,21 @@
   .lead(1.625em);
 }
 
-#bio address {
+header address {
   .lead(1em, 1.625em);
 }
 
-#main ul, ol {
+.job .date_range {
+  &:before {
+    content: "";
+  }
+}
+
+main ul, ol {
   padding-left: 0;
 }
 
-#main li {
+main li {
   list-style: inside;
   text-indent: -1em;
 }
