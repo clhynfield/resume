@@ -10,68 +10,73 @@
     <link rel="stylesheet" type="text/less" media="only screen and (min-width: 40em)" href="styles/medium.less">
     <link rel="stylesheet" type="text/less" media="only screen and (min-width: 61.5em)" href="styles/large.less">
     <!--
-    <link rel="stylesheet" type="text/css" media="print" href="styles/print.css"> 
+    <link rel="stylesheet" type="text/css" media="print" href="styles/print.css">
     -->
     <script src="vendor/less/less-2.6.1.min.js" type="text/javascript"></script>
   </head>
   <body lang="en">
-    <div class="container">
-      <div id="intro">
-        <header>
-          <!-- div id="headshot">
-            <figure>
-              <img src="images/clayton.jpg">
-            </figure> 
-          </div -->
-          <div id="bio">
-            <h1>Clayton Hynfield</h1>
-            <h2>Digital Transformation Leader</h2>
-            <address>Cincinnati, Ohio</address>
-          </div>
-          <!-- div id="quote">
-            <p>"No matter where you go, there you are."</p>
-          </div -->
-        </header>
-      </div>
-      <div id="main">
-        <article id="experience">
-          <div class="subhead">
-            <div class="title">
-              <h4>Experience</h4>
-            </div>
-          </div>
-          <div class="job">
-            <section class="company">
-              <h5>Liberty Mutual Insurance</h5>
-            </section>
-            <section class="summary">
-              <span class="title">Principal Platform Developer</span>
-              <span class="separator">&mdash;</span>
-              <span class="date_range">Jan, 2015 &ndash; Present</span>
-              <p class="value">Drove technological, organizational, and cultural transformation of a Fortune 100 financial corporation.</p>
-              <ul class="accomplishments">
-                <li>Developed, deployed, and supported multi-region PaaS using Pivotal Cloud Foundry on vSphere and AWS IaaS, custom components for platform operations and integrations, and advanced IaaS features like AWS Lambda and CloudFormation, in support of all lines of business including new $20bn lean startup-model business line.</li>
-                <li>Recommended, designed, and led the deployment of enterprise WebSphere integrated platform.</li>
-              </ul>
-            </section>
-          </div>
-          <div class="job">
-            <section class="company">
-              <h5>Ohio Casualty Insurance</h5>
-            </section>
-            <section class="summary">
-              <span class="title">Senior Systems Engineer</span>
-              <span class="separator">&mdash;</span>
-              <span class="date_range">2005 &ndash; 2008</span>
-              <p class="value">&nbsp;</p>
-              <ul class="accomplishments">
-                <li>Developed infrastructure automation to deliver standard and consistent AIX LPARs in two hours.</li>
-                <li>Architected and built a dozen uniform DB2 platforms on AIX LPARs servicing over fifty web applications with no outages in three years of production service.</li>
-              </ul>
-            </section>
-          </div>
-        </article>
-      </div>
-    </div>
+    <header>
+      <h1>Clayton Hynfield</h1>
+      <h2>Digital Transformation Leader</h2>
+      <address>Cincinnati, Ohio</address>
+      <!-- div id="headshot">
+        <figure>
+          <img src="images/clayton.jpg">
+        </figure>
+      </div -->
+      <!-- div id="quote">
+        <p>"No matter where you go, there you are."</p>
+      </div -->
+    </header>
+    <main>
+      <section id="experience">
+        <h3>Experience</h3>
+        <section class="company">
+          <h4>Liberty Mutual Insurance</h4>
+          <section class="job">
+            <h5>Principal Platform Developer</h5>
+            <p class="date_range"><time datetime="2015-01">January, 2015</time>  &ndash; <time datetime="Z">Present</time></p>
+            <p class="value">Drove technological, organizational, and cultural transformation of a Fortune 100 financial corporation.</p>
+            <ul class="accomplishments">
+              <li>Developed, deployed, and supported multi-region PaaS using Pivotal Cloud Foundry on vSphere and AWS IaaS, custom components for platform operations and integrations, and advanced IaaS features like AWS Lambda and CloudFormation, in support of all lines of business including new $20bn lean startup-model business line.</li>
+              <li>Recommended, designed, and led the deployment of enterprise WebSphere integrated platform.</li>
+            </ul>
+          </section>
+          <section class="job">
+            <h5>Senior Systems Administrator</h5>
+            <p class="date_range"><time>2008</time> &ndash; <time>2012</time></p>
+            <p class="value">Saved est. $80K in labor annually and shortened upgrade cycles by 75%</p>
+            <ul class="accomplishments">
+              <li>Designed, developed, and led delivery of market platform lifecycle management solution.</li>
+              <li>Designed and built rapidly deployable J2E platform service.</li>
+            </ul>
+          </section>
+        </section>
+        <section class="company">
+          <h4>Ohio Casualty Insurance</h4>
+          <section class="job">
+            <h5>Senior Systems Engineer</h5>
+            <p class="date_range"><time>2005</time> &ndash; <time>2008</time></span>
+            <p class="value">&nbsp;</p>
+            <ul class="accomplishments">
+              <li>Developed infrastructure automation to deliver standard and consistent AIX LPARs in two hours.</li>
+              <li>Architected and built a dozen uniform DB2 platforms on AIX LPARs servicing over fifty web applications with no outages in three years of production service.</li>
+            </ul>
+          </section>
+        </section>
+        <section class="company">
+          <h4>Miami University</h4>
+          <section class="job">
+            <h5>Systems Administrator/Engineer</h5>
+            <p class="date_range"><time>1996</time> &ndash; <time>2005</time></span>
+            <p class="value">&nbsp;</p>
+            <ul class="accomplishments">
+              <li>Led project to acquire, architect, and deploy distributed, highly available DHCP and DNS solution; migrated 15,000 clients and hundreds of servers to new service with no impact.</li>
+              <li>Led development and deployment of facility to monitor dozens of application services. Provided forensic consultation on several criminal investigations with local police and FBI.</li>
+              <li>Federated user authentication to dozens of servers and services into central LDAP service.</li>
+              <li>Developed standards and best practices for installation and maintenance of Unix systems.</li>
+            </ul>
+      </section>
+    </main>
   </body>
 </html>
