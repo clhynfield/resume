@@ -22,21 +22,11 @@ body {
 
 header {
   .row;
-  #bio {
+  h1, h2, address, #quote {
     .column(4, 6);
     .push(2);
-    h1, h2, address {
-        .debug_border;
-        vertical-align: middle;
-      }
-      address {
-        line-height: 2.25em;
-
-      }
-  }
-  #quote {
-    .column(4);
-    .push(2);
+    .debug_border;
+    vertical-align: middle;
   }
 }
 
@@ -82,7 +72,7 @@ main {
   .lead(1.625em);
 }
 
-#bio address {
+header address {
   .lead(1em, 1.625em);
 }
 
