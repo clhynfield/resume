@@ -48,8 +48,8 @@ body {
 
 .row(@columns:@columns) {
   display: block;
-  width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
-  margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
+  width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-1.4;
+  margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)+.7;
   -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -80,7 +80,7 @@ body {
 
 .debug_border {
   background-color: hsla(271, .15, 95%, 50%*@debug);
-  border: @debug*.5px dotted black;
+  border: @debug*1px dotted black;
 }
 
 .debug_block {

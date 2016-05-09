@@ -1,6 +1,8 @@
 @import 'grid.less';
 @import 'rhythm.less';
 
+@debug: 1;
+
 // MEDIUM GRID //
 
 // Target a total composition width of 36em,
@@ -22,22 +24,32 @@ body {
 
 header {
   .row;
-  h1, h2, address, #quote {
-    .column(4, 6);
-    .push(2);
-    .debug_border;
-    vertical-align: middle;
-  }
 }
 
-main {
-  h3 {
-    .column(4);
-    .push(2);
-  }
+header>* {
+  .column(4, @columns);
+  .push(2);
+  vertical-align: middle;
 }
 
-main {
+section {
+  .row;
+  .debug_border;
+}
+
+section>*:not(section) {
+  .column(4);
+  .push(2);
+}
+
+.value {
+  .column(2);
+  text-align: right;
+}
+
+h5, .date_range { display: block; }
+
+/* main {
   .company {
     margin-bottom: 0.825em;
     h4 {
@@ -53,13 +65,9 @@ main {
       .accomplishments {
         .column(4);
       }
-      .value {
-        .column(2);
-        text-align: right;
-      }
     }
   }
-}
+} */
 
 
 // DESIGN //

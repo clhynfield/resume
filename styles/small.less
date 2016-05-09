@@ -26,38 +26,24 @@ body {
   display: none;
 }
 
-
 header {
   .row;
-  h1, h2, address, #quote {
-    .column(@columns);
-  }
 }
 
-main {
-  .row;
-  .company {
-    .row;
-    h4 {
-      .column(@columns);
-    }
-    .job {
-      .column(@columns);
-      h5, .date_range {
-        display: inline;
-      }
-      .accomplishments {
-        .column(@columns);
-      }
-      .accomplishments {
-        .column(@columns);
-      }
-      .value {
-        .column(@columns);
-      }
-    }
-  }
+header>* {
+  .column(@columns);
 }
+
+section>section {
+  .row;
+}
+
+section>*:not(section) {
+  .column(@columns);
+  .debug_border;
+}
+
+h5, .date_range { display: inline; }
 
 // DESIGN //
 
