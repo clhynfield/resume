@@ -12,14 +12,14 @@
 @column-width: 3.7082em;
 @gutter-width: 2.2918em;
 
-@total-width: 100%;
+// @total-width: 100%;
 
 // LAYOUT //
 
 body {
-  width: 90%;
+  width: @total-width;
   margin: auto;
-  margin-top: 1em;
+  margin-top: 2.5em;
 }
 
 header {
@@ -27,14 +27,13 @@ header {
 }
 
 header>* {
-  .column(4, @columns);
+  .column(4);
   .push(2);
   vertical-align: middle;
 }
 
 section {
-  .row;
-  .debug_border;
+  .row();
 }
 
 section>*:not(section) {
@@ -42,9 +41,13 @@ section>*:not(section) {
   .push(2);
 }
 
-.value {
+.company>.value {
+  .column(@columns);
+}
+
+.job>.value {
   .column(2);
-  text-align: right;
+  text-align: justified;
 }
 
 h5, .date_range { display: block; }
@@ -82,6 +85,15 @@ h5, .date_range { display: block; }
 
 header address {
   .lead(1em, 1.625em);
+}
+
+.company>.value>p {
+  .lead(0.875em, 1em);
+  text-align: justify;
+}
+
+.value {
+  text-align: right;
 }
 
 .job .date_range {
