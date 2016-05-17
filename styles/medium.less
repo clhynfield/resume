@@ -41,9 +41,13 @@ section>*:not(section) {
   .push(2);
 }
 
-.value {
+.company>.value {
+  .column(@columns);
+}
+
+.job>.value {
   .column(2);
-  text-align: right;
+  text-align: justified;
 }
 
 h5, .date_range { display: block; }
