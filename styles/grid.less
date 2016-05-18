@@ -1,21 +1,19 @@
-/////////////////
-// Semantic.gs // for LESS: http://lesscss.org/
-/////////////////
-
 @debug: 0;
 
 @import url(./global.css);
 @import 'prairie-twilight.less';
 
 // Defaults which you can freely override
-@column-width: 60;
-@gutter-width: 20;
-@columns: 12;
+@columns: 6;
+@column-width: 3.7082em;
+@gutter-width: 2.2918em;
 
-// Utility variable â€” you should never need to modify this
-@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+@gridsystem-width: (@column-width + @gutter-width) * @columns;
 
-// Set @total-width to 100% for a fluid layout
+.row_width(@row_columns:@columns) {
+  width: (@total-width * ((@column-width + @gutter-width) * @row_columns) / @gridsystem-width);
+}
+
 @total-width: @gridsystem-width;
 
 // The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
@@ -42,12 +40,12 @@ body {
   .clearfix;
 }
 
-.row(@columns:@columns) {
+.row(@row_columns:@columns) {
   display: block;
   background-color: hsla(357.6, 31.7%, 53%, 10%*@debug);
   border: 0px dotted black;
-  width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
-  margin: 0; // @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
+  .row_width(@row_columns);
+  margin: 0;
   -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -78,4 +76,3 @@ body {
   background-color: hsla(271, .25, 75%, 25%*@debug);
 //  border: @debug*1px dotted black;
 }
-
