@@ -17,7 +17,7 @@
 // LAYOUT //
 
 body {
-  width: 90%;
+  width: @gridsystem-width;
   margin: auto;
   margin-top: 1em;
 }
@@ -41,9 +41,13 @@ section>*:not(section) {
   .push(2);
 }
 
-.value {
+.company>.value {
+  .column(@columns);
+}
+
+.job>.value {
   .column(2);
-  text-align: right;
+  text-align: justified;
 }
 
 h5, .date_range { display: block; }
@@ -111,4 +115,3 @@ main li {
     }
   }
 }
-
