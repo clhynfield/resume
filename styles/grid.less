@@ -47,6 +47,7 @@ body {
 }
 
 .row(@columns:@columns) {
+  background-color: hsla(357.6, 31.7%, 53%, 10%*@debug);
   display: block;
   width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-1.4;
   margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)+.7;
@@ -58,6 +59,7 @@ body {
   .clearfix;
 }
 .column(@x,@columns:@columns) {
+  background-color: hsla(217, 36%, 51%, 10%*@debug);
   display: inline;
   float: left;
   width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
@@ -73,39 +75,4 @@ body {
 }
 .pull(@offset:1) {
   margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
-}
-
-
-// DEBUG //
-
-.debug_border {
-  background-color: hsla(271, .15, 95%, 50%*@debug);
-  border: @debug*1px dotted black;
-}
-
-.debug_block {
-  display: block;
-}
-
-main {
-  .subhead .title {
-    .debug_border;
-  }
-  .job {
-    .company {
-      .debug_border;
-    }
-    .summary {
-      .value, .title, .date_range, .accomplishments {
-        .debug_border;
-      }
-    }
-  }
-  .debug_row {
-    .row;
-    .debug_col {
-      .column(1);
-      .debug_border;
-    }
-  }
 }
