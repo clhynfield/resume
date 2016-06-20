@@ -1,7 +1,7 @@
 @import 'grid.less';
 @import 'rhythm.less';
 
-@debug: 1;
+@debug: 0;
 
 // MEDIUM GRID //
 
@@ -19,7 +19,7 @@
 body {
   width: @gridsystem-width;
   margin: auto;
-  margin-top: 1em;
+  margin-top: 2.5em;
 }
 
 header {
@@ -27,13 +27,13 @@ header {
 }
 
 header>* {
-  .column(4, @columns);
+  .column(4);
   .push(2);
   vertical-align: middle;
 }
 
 section {
-  .row;
+  .row();
 }
 
 section>*:not(section) {
@@ -56,27 +56,6 @@ section>.accomplishments {
 
 h5, .date_range { display: block; }
 
-/* main {
-  .company {
-    margin-bottom: 0.825em;
-    h4 {
-      .column(4);
-      .push(2);
-    }
-    .job {
-      .clearfix;
-      h5, .date_range, .accomplishments {
-        .column(4);
-        .push(2);
-      }
-      .accomplishments {
-        .column(4);
-      }
-    }
-  }
-} */
-
-
 // DESIGN //
 
 .huge, h1 {
@@ -89,6 +68,15 @@ h5, .date_range { display: block; }
 
 header address {
   .lead(1em, 1.625em);
+}
+
+.company>.value {
+  .lead(0.875em, 1em);
+  text-align: justify;
+}
+
+.value {
+  text-align: right;
 }
 
 .job .date_range {

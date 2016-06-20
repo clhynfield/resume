@@ -1,26 +1,20 @@
-/////////////////
-// Semantic.gs // for LESS: http://lesscss.org/
-/////////////////
-
 @debug: 0;
 
 @import url(./global.css);
 @import 'prairie-twilight.less';
 
 // Defaults which you can freely override
-@column-width: 60;
-@gutter-width: 20;
-@columns: 12;
+@columns: 6;
+@column-width: 3.7082em;
+@gutter-width: 2.2918em;
 
-// Utility variable â€” you should never need to modify this
-@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+@gridsystem-width: (@column-width + @gutter-width) * @columns;
 
-// Set @total-width to 100% for a fluid layout
+.row_width(@row_columns:@columns) {
+  width: (@total-width * ((@column-width + @gutter-width) * @row_columns) / @gridsystem-width);
+}
+
 @total-width: @gridsystem-width;
-
-// Uncomment these two lines and the star-hack width/margin lines below to enable sub-pixel fix for IE6 & 7. See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
-// @min-width: 960;
-// @correction: 0.5 / @min-width * 100 * 1%;
 
 // The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix() {
@@ -46,29 +40,26 @@ body {
   .clearfix;
 }
 
-.row(@columns:@columns) {
-  background-color: hsla(357.6, 31.7%, 53%, 10%*@debug);
+.row(@row_columns:@columns) {
   display: block;
-  width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
-  margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
+  background-color: hsla(357.6, 31.7%, 53%, 10%*@debug);
+  .row_width(@row_columns);
+  margin: 0;
   -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-  // *width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-@correction;
-  // *margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)-@correction;
   .clearfix;
 }
 .column(@x,@columns:@columns) {
   background-color: hsla(217, 36%, 51%, 10%*@debug);
   display: inline;
+  background-color: hsla(217, 36%, 51%, 10%*@debug);
   float: left;
   width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
   margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width);
   -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-  // *width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width)-@correction;
-  // *margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width)-@correction;
 }
 .push(@offset:1) {
   margin-left: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);

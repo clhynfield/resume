@@ -7,9 +7,10 @@
 
 // For our small grid we use only 3 columns total and active
 // to maximize screen real estate and to give us exactly half of our medium sized grid
-@column-width: 307;
-@gutter-width: 13;
+
 @columns: 3;
+@column-width: 6.1803em;
+@gutter-width: 3.8197em;
 
 // Give us divine proportions instead of pixels
 @total-width: 100%;
@@ -17,7 +18,7 @@
 // LAYOUT //
 
 body {
-  width: 90%;
+  width: @gridsystem-width;
   margin: auto;
   padding-top: 0.375em;
 }
@@ -34,7 +35,7 @@ header>* {
   .column(@columns);
 }
 
-section>section {
+section {
   .row;
 }
 
@@ -42,7 +43,7 @@ section>*:not(section) {
   .column(@columns);
 }
 
-h5, .date_range { display: inline; }
+h5, p.date_range { display: inline; }
 
 // DESIGN //
 
@@ -70,7 +71,7 @@ h4, h5 {
   .lead(0.875em);
 }
 
-.job .date_range {
+.date_range {
   &:before {
     content: " — ";
   }
