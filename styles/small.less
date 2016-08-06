@@ -18,7 +18,7 @@
 // LAYOUT //
 
 body {
-  width: @gridsystem-width;
+  width: @total-width;
   margin: auto;
   padding-top: 0.375em;
 }
@@ -76,5 +76,16 @@ header address {
 .date_range {
   &:before {
     content: " — ";
+  }
+}
+
+@media screen {
+  body {
+    @media (min-width: 29em) {
+      .lead(1.125em);
+    }
+    @media (min-width: 34.5em) {
+      .lead(1.25em);
+    }
   }
 }
