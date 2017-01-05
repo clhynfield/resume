@@ -72,6 +72,11 @@ a {
   text-decoration: none;
 }
 
+a[href^="http://"]:not([href*="clayton.hynfield.org"]):after, 
+a[href^="https://"]:not([href*="clayton.hynfield.org"]):after {
+  content: ""
+}
+
 #quote {
   color: #8c6093;
 }
