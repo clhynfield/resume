@@ -52,6 +52,7 @@ gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if(/\.js$/, $.uglify({compress: {drop_console: true}})))
+    .pipe($.if(/\.css$/, $.less()))
     .pipe($.if(/\.css$/, $.cssnano({safe: true, autoprefixer: false})))
     .pipe($.if(/\.html$/, $.htmlmin({
       collapseWhitespace: true,
@@ -104,6 +105,8 @@ gulp.task('serve', () => {
 
     gulp.watch([
       'app/*.html',
+      'app/styles/**/*',
+      'app/scripts/**/*',
       'app/images/**/*',
       '.tmp/fonts/**/*'
     ]).on('change', reload);
