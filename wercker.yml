@@ -1,0 +1,16 @@
+box: node:6-slim
+
+dev:
+  steps:
+    - npm-install
+    - internal/watch:
+        code: gulp build
+        reload: true
+
+build:
+  steps:
+    - npm-install
+    - hgen/gulp:
+        tasks: test
+    - hgen/gulp:
+        tasks: default
