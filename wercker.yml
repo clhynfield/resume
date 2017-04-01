@@ -10,6 +10,6 @@ dev:
 build:
   steps:
     - npm-install
-    - bower-install
+    - greatbeyond/bower-install
     - hgen/gulp:
         tasks: default
