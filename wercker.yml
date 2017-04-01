@@ -11,6 +11,4 @@ build:
   steps:
     - npm-install
     - hgen/gulp:
-        tasks: test
-    - hgen/gulp:
         tasks: default
