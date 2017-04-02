@@ -175,7 +175,7 @@ gulp.task('pdf', ['html'], () => {
     .pipe($.htmlPdf({
       format: 'letter',
       orientation: 'portrait',
-      base: "file://" + process.env.PWD + "app/styles",
+      base: "http://clayton.hynfield.org/resume/styles",
     }))
     .pipe(gulp.dest('dist'));
 });
