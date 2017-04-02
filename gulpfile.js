@@ -31,7 +31,7 @@ gulp.task('scripts', () => {
     .pipe(reload({stream: true}));
 });
 
-function lint(files) {
+function eslint(files) {
   return gulp.src(files)
     .pipe($.eslint({ fix: true }))
     .pipe(reload({stream: true, once: true}))
@@ -39,14 +39,27 @@ function lint(files) {
     .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
 }
 
-gulp.task('lint', () => {
-  return lint('app/scripts/**/*.js')
+gulp.task('eslint', () => {
+  return eslint('app/scripts/**/*.js')
     .pipe(gulp.dest('app/scripts'));
 });
-gulp.task('lint:test', () => {
-  return lint('test/spec/**/*.js')
+gulp.task('eslint:test', () => {
+  return eslint('test/spec/**/*.js')
     .pipe(gulp.dest('test/spec'));
 });
+
+function htmllint(files) {
+  return gulp.src(files)
+    .pipe($.htmllint({rules: {'indent-width': 2}}))
+    .pipe(reload({stream: true, once: true}));
+}
+
+gulp.task('htmllint', () => {
+  return htmllint('app/**/*.html')
+    .pipe(gulp.dest('app'));
+});
+
+gulp.task('lint', ['eslint', 'htmllint']);
 
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('app/*.html')
@@ -145,7 +158,7 @@ gulp.task('serve:test', ['scripts'], () => {
 
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch(['test/spec/**/*.js', 'test/index.html']).on('change', reload);
-  gulp.watch('test/spec/**/*.js', ['lint:test']);
+  gulp.watch('test/spec/**/*.js', ['eslint:test']);
 });
 
 // inject bower components
