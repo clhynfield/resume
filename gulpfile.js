@@ -170,7 +170,17 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('pdf', ['html'], () => {
+  return gulp.src('app/index.html')
+    .pipe($.htmlPdf({
+      format: 'letter',
+      orientation: 'portrait',
+      base: "file://" + process.env.PWD + "app/styles",
+    }))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras', 'pdf'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
