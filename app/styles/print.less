@@ -1,3 +1,10 @@
+@import 'grid.less';
+
+.lead(@font_size, @line_height:@font_size) {
+  font-size: @font_size;
+  line-height: (((ceil(2*(((@line_height*1.125))-1)))/2)+1)/@font_size;
+}
+
 /* Black prints faster: h5bp.com/s */
 * {
   background: transparent !important;
@@ -43,3 +50,95 @@ h2, h3, h4 { page-break-after: avoid; }
 h5, p.date_range { display: inline; }
 
 p.date_range { float: right; }
+
+@columns: 6;
+@column-width: 3.7082em;
+@gutter-width: 2.2918em;
+
+@total-width: 100%;
+
+// LAYOUT //
+
+body {
+  width: 82.3529%;
+  margin: auto;
+  font-size: 8pt;
+}
+
+header {
+  .row;
+}
+
+header>* {
+  .column(4);
+  .push(2);
+  vertical-align: middle;
+}
+
+section {
+  .row();
+}
+
+section>*:not(section) {
+  .column(4);
+  .push(2);
+}
+
+section>.accomplishments {
+  .push(0);
+}
+
+.company>.value {
+  .column(@columns);
+}
+
+.job>.value {
+  .column(2);
+}
+
+// .huge, h1 {
+//   .lead(1.5em, 1.875em);
+// }
+
+.large, h2 {
+  .lead(1.5em, 1.875em);
+}
+
+h3 {
+  .lead(1.5em);
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+header address {
+  .lead(1em, 1.625em);
+}
+
+.company>.value {
+  text-align: justify;
+}
+
+.value {
+  text-align: right;
+  &:empty {
+    &:before {
+      content: "\00A0";
+      display: block;
+    }
+  }
+}
+
+.date_range {
+  &:before {
+    content: "";
+  }
+}
+
+main ul, ol {
+  padding-left: 0;
+}
+
+main li {
+  list-style: inside;
+  text-indent: -1em;
+}
