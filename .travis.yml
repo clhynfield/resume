@@ -32,4 +32,4 @@ deploy:
     bucket: "$BUCKET_NAME"
     skip_cleanup: true
     acl: public-read
-    paths: "./dist/index.pdf"
+    local_dir: dist
