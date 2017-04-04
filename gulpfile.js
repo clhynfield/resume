@@ -170,12 +170,19 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('pdf', ['html'], () => {
-  return gulp.src('app/index.html')
+gulp.task('pdf', ['html', 'fonts', 'styles'], () => {
+  const base = "file://" + process.cwd() + "/dist/";
+  return gulp.src('dist/index.html')
     .pipe($.htmlPdf({
-      format: 'letter',
-      orientation: 'portrait',
-      base: "http://clayton.hynfield.org/resume/styles",
+      'format': 'letter',
+      'orientation': 'portrait',
+      'border': {
+        "top": "1in",
+        "bottom": "1in",
+        "right": "0.5in",
+        "left": "0.5in"
+      },
+      'base': base,
     }))
     .pipe(gulp.dest('dist'));
 });
