@@ -14,10 +14,22 @@ install:
   - npm install
   - bower install
 script: gulp
+notifications:
+  slack:
+    on_success: always
+    rooms:
+      - $SLACK_ROOM_TOKEN
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist
-  on:
-    branch: master
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: dist
+    on:
+      branch: master
+  - provider: "$BUCKET_PROVIDER"
+    access_key_id: "$BUCKET_ACCESS_KEY"
+    secret_access_key: "$BUCKET_SECRET_KEY"
+    bucket: "$BUCKET_NAME"
+    skip_cleanup: true
+    acl: public-read
+    paths: "./dist/index.pdf"
