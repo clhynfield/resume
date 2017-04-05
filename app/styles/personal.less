@@ -1,4 +1,28 @@
 @font-face {
+    font-family: 'dejavu_sansbook';
+    src: url('DejaVuSans-webfont.eot');
+    src: url('DejaVuSans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('DejaVuSans-webfont.woff') format('woff'),
+         url('DejaVuSans-webfont.ttf') format('truetype'),
+         url('DejaVuSans-webfont.svg#dejavu_sansbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dejavu_sansbold';
+    src: url('DejaVuSans-Bold-webfont.eot');
+    src: url('DejaVuSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('DejaVuSans-Bold-webfont.woff') format('woff'),
+         url('DejaVuSans-Bold-webfont.ttf') format('truetype'),
+         url('DejaVuSans-Bold-webfont.svg#dejavu_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
   font-family: 'EB Garamond';
   font-style: italic;
   src: local('EB Garamond'), local('EBGaramond'), url('../fonts/EBGaramond12-Italic.woff') format('woff');
@@ -14,13 +38,14 @@
 body {
   color: #656b6f;
   background-color: rgb(244, 241, 231, 1);
-  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: 'dejavu_sansbook', Helvetica, sans-serif;
 }
 
 h1 {
   color: #253043;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: bold; //dejavu_sansbold
+  font-family: 'dejavu_sansbold', Helvetica, sans-serif;
   letter-spacing: 0.125em;
 }
 

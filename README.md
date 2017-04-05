@@ -26,7 +26,7 @@ render all client-side just fine from there.
 
 For a full developer workflow, including live-reloading preview,
 and stylesheet preprocessing and optimization, you'll need to
-install [Node], [Gulp], and [Bower]. 
+install [Node], [Gulp], and [Bower].
 
 ## Publishing
 
@@ -35,7 +35,7 @@ install [Node], [Gulp], and [Bower].
 ## Colophon
 
 - [EB Garamond](http://www.georgduffner.at/ebgaramond/)
-
+- [DejaVu Sans](https://dejavu-fonts.github.io)
 
 [Node]: https://nodejs.org
 [Gulp]: http://gulpjs.com
