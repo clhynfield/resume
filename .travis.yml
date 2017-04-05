@@ -34,4 +34,4 @@ deploy:
     acl: public-read
     local_dir: dist
     on:
-      branch: **
+      all_branches: true
