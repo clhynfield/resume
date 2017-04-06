@@ -15,10 +15,7 @@ install:
   - bower install
 script: gulp
 notifications:
-  slack:
-    on_success: always
-    rooms:
-      - $SLACK_ROOM_TOKEN
+  slack: "$SLACK_ROOM_TOKEN"
 deploy:
   - provider: pages
     skip_cleanup: true
