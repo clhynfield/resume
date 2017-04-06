@@ -1,12 +1,7 @@
-box: node:6-slim
+box: monostream/nodejs-gulp-bower
 
 build:
   steps:
-    - npm-install:
-        options:
-          - --global
-          - bower
-          - gulp
     - npm-install
     - greatbeyond/bower-install
     - hgen/gulp:
