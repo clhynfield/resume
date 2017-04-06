@@ -1,0 +1,13 @@
+box: node:6-slim
+
+build:
+  steps:
+    - npm-install:
+        options:
+          - --global
+          - bower
+          - gulp
+    - npm-install
+    - greatbeyond/bower-install
+    - hgen/gulp:
+        tasks: default
