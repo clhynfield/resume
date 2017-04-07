@@ -1,0 +1,8 @@
+box: clhynfield/build-node-webapp
+
+build:
+  steps:
+    - npm-install
+    - greatbeyond/bower-install
+    - hgen/gulp:
+        tasks: default
