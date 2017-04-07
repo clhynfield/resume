@@ -1,4 +1,4 @@
-box: monostream/nodejs-gulp-bower
+box: clhynfield/build-node-webapp
 
 build:
   steps:
